@@ -1,0 +1,297 @@
+html, body {
+  background-color: #121212;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+header, footer {
+  background-color: #1f1b2e;
+  padding: 2rem;
+  text-align: center;
+  border-bottom: 3px solid #9c27b0;
+}
+
+footer {
+  border-top: 3px solid #9c27b0;
+  border-bottom: none;
+  padding: 1.5rem 0;
+}
+
+header h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 800;
+  font-size: 2.5rem;
+  color: #9c27b0;
+  animation: fadeIn 2s ease-in-out;
+  margin: 0;
+}
+
+nav {
+  margin-top: 1rem;
+}
+
+nav a {
+  margin: 0 1rem;
+  color: #ddd;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: #9c27b0;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+nav a:hover,
+nav a.active {
+  color: #9c27b0;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+main, section {
+  padding: 3rem 1.5rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  color: #9c27b0;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  border-left: none;
+  text-align: center; 
+  padding-left: 1rem;
+  font-weight: 700;
+}
+
+.music-grid, .acapella-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.music-card, .acapella-card {
+  background: #1f1b2e;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #9c27b0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.music-card:hover, .acapella-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #d05ce3;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #9c27b0;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+.cta-button:hover {
+  background-color: #7a1da0;
+}
+
+footer p {
+  color: #999;
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+  main, section {
+    padding: 2rem 1rem;
+  }
+}
+
+.identity-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 2rem auto 3rem;
+}
+
+.identity-card {
+  background: #1f1b2e;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgb(156 39 176 / 0.5);
+  width: 300px;
+  text-align: center;
+  color: #ddd;
+  font-family: 'Open Sans', sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.identity-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #d05ce3;
+}
+
+.identity-card h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 800;
+  font-size: 1.8rem;
+  color: #d05ce3;
+  margin-bottom: 0.7rem;
+}
+
+.identity-card p {
+  font-weight: 400;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.btn-link {
+  color: #d05ce3;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid #d05ce3;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  display: inline-block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-link:hover {
+  background-color: #d05ce3;
+  color: #1f1b2e;
+}
+
+/* Responsivo para identity cards */
+@media (max-width: 600px) {
+  .identity-cards {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .identity-card {
+    width: 100%;
+  }
+}
+
+/* Centralizar texto nos parágrafos e botões das seções principais */
+.intro-section,
+.acapellas-section,
+.featured-music,
+.identity-cards {
+  text-align: center;
+}
+
+/* Se quiser centralizar também os títulos h3 das identity cards */
+.identity-card h3 {
+  text-align: center;
+}
+
+/* Centralizar os parágrafos dentro das identity-cards */
+.identity-card p {
+  text-align: center;
+}
+
+/* Se quiser deixar os botões "Listen on Spotify" centralizados */
+.identity-card .btn-link {
+  display: inline-block; /* para aceitar margin */
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Opcional: centralizar os parágrafos abaixo dos iframes das músicas */
+.music-card p {
+  text-align: center;
+}
+
+.contact-section {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.contact-section h2 {
+  color: #9c27b0;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-left: none;
+}
+
+.contact-section p {
+  color: #ccc;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.contact-icons a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #ddd;
+  background-color: #1f1b2e;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 120px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 10px rgba(156, 39, 176, 0.4);
+}
+
+.contact-icons a:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #9c27b0;
+  color: #9c27b0;
+}
+
+.contact-icons i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
