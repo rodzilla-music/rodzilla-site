@@ -3,7 +3,7 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   color: #ddd;
   line-height: 1.6;
 }
@@ -21,8 +21,9 @@ footer {
   padding: 1.5rem 0;
 }
 
-header h1 {
-  font-family: 'Orbitron', sans-serif;
+header h1,
+.identity-card h3 {
+  font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   font-size: 2.5rem;
   color: #9c27b0;
